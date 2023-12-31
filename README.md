@@ -85,7 +85,7 @@ I wired up a potted 12 V to USB DC-DC converter to the "LIGHT" port and placed i
 
 **USB routed outside**
 
-Extremely ugly and not yet fixed in any way, but good for today. (Watch me not change this every)
+Extremely ugly and not yet fixed in any way, but good for today. (Watch me not change this ever)
 
 ![UglyUSB](/img/UglyUSB.jpg)
 
@@ -105,6 +105,23 @@ Next steps in figuring this out look as follows:
     - [ ] Binary to hopefully raw CAN
     - [ ] Raw CAN to useful information
 - [ ] Design hardware to automatically decode to USB Serial or logfiles ([Flipper Zero Backpack?](https://github.com/chrismettal/flipper-zero-backpacks))
+
+<details>
+<summary markdown="span">Click to expand - Communication reverse engineering</summary>
+
+- High level overview of E-Tube communication, DC coupled. While the bike is on, there is about 8.5 V DC on the E-Tube wires, with 1 V peak to peak BPSK modulated on top of it. When the bike is off, no communication takes place, and the DC voltage drops to about 7.5 V.
+- In idle, about once all 1000ms, a 500ms burst of communication takes place.
+- When buttons are pressed, the communication becomes almost constant
+
+![HighLevelScope](/img/Scope_HighLevel_DC_Coupled.bmp)
+
+- Mid-ish level overview of similar data, AC coupled
+
+![MidLevelScope](/img/Scope_MidLevel_AC_Coupled.bmp)
+
+
+
+</details>
 
 ---
 
