@@ -1,0 +1,14 @@
+ANALOG
+Ch 1 Scale 150mV/, Pos 0.0V, Coup AC, BW Limit Off, Inv Off, Imp 1M Ohm
+     Probe 10.000000 : 1, Skew 0.0s
+
+TRIGGER
+Sweep Mode Auto, Coup AC, Noise Rej On, HF Rej Off, Holdoff 600.0000000ms
+Mode Edge, Source Ch 1, Slope Rising, Level 481.25mV
+
+HORIZONTAL
+Mode Normal, Ref Center, Main Scale 1.000ms/, Main Delay 4.720000000ms
+
+ACQUISITION
+Mode Normal, Realtime On, Vectors On, Persistence Off
+
