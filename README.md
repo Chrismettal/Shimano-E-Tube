@@ -95,13 +95,18 @@ Extremely ugly and not yet fixed in any way, but good for today. (Watch me not c
 
 ## Communication
 
-According to [this EEVBlog Forum thread](https://www.eevblog.com/forum/projects/shimano-di2-modulation/) the communication uses Binary Phase Key Shifting (BPSK) to modulate the communication signals (Which SHOULD be CAN telegrams according to Shimano documentation) over the E-Tube wires.
+According to [this EEVBlog Forum thread](https://www.eevblog.com/forum/projects/shimano-di2-modulation/) the communication uses Binary Phase Key Shifting (BPSK) to modulate the communication signals (Which SHOULD be `CAN` telegrams according to Shimano documentation) over the E-Tube wires.
+
+I have been able to capture some packets, but didn't yet figure out the actual protocol used here. Getting enough data in high enough resolution into my scope's memory proved a little tricky. Bursts can be somewhat observed with the [translator totebook](/data_analysis/E-Tube_Translator.ipynb) which is semi successful in extracting binary sequences from a raw burst scope. The data I recorded didn't yet make sense to me though. As I don't have a specific motivation to decoding the protocol right now, I am gonna put this on ice for now. (2024-01)
+
+![Decoder](/img/Decoder.png)
 
 Next steps in figuring this out look as follows:
 
-- [ ] Aquire a scope trace of E-Tube communications
+- [x] Aquire a scope trace of E-Tube communications
 - [ ] Decode with Python / Octave
-    - [ ] PSK to Binary
+    - [x] PSK to Binary
+    - [ ] Recapture "idle burst" in better resolution
     - [ ] Binary to hopefully raw CAN
     - [ ] Raw CAN to useful information
 - [ ] Design hardware to automatically decode to USB Serial or logfiles ([Flipper Zero Backpack?](https://github.com/chrismettal/flipper-zero-backpacks))
@@ -118,8 +123,6 @@ Next steps in figuring this out look as follows:
 - Mid-ish level overview of similar data, AC coupled
 
 ![MidLevelScope](/img/Scope_MidLevel_AC_Coupled.bmp)
-
-
 
 </details>
 
