@@ -56,3 +56,7 @@ Notebook.md
 *.dtmp
 *.drawio.bkp
 *.svg.bkp
+
+# python
+__pycache__/
+*.pyc
